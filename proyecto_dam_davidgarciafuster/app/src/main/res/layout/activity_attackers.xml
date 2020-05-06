@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Attackers">
+
+    <ImageView
+        android:id="@+id/zofia_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/ying_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/zofia_icon" />
+
+    <ImageView
+        android:id="@+id/iana_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/iana_icon" />
+
+    <ImageView
+        android:id="@+id/maverick_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/lion_lion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/maverick_icon" />
+
+    <ImageView
+        android:id="@+id/gridlock_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="162dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gridlock_icon" />
+
+    <ImageView
+        android:id="@+id/thatcher_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/ash_icon"
+        app:layout_constraintStart_toEndOf="@+id/sledge_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thatcher_icon" />
+
+    <ImageView
+        android:id="@+id/jackal_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="306dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jackal_icon" />
+
+    <ImageView
+        android:id="@+id/fuze_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="522dp"
+        app:layout_constraintEnd_toStartOf="@+id/glaz_icon"
+        app:layout_constraintStart_toEndOf="@+id/iq_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fuze_icon" />
+
+    <ImageView
+        android:id="@+id/iq_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="522dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/iq_icon" />
+
+    <ImageView
+        android:id="@+id/finka_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="234dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/finka_icon" />
+
+    <ImageView
+        android:id="@+id/ash_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ash_icon" />
+
+    <ImageView
+        android:id="@+id/glaz_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="522dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/glaz_icon" />
+
+    <ImageView
+        android:id="@+id/buck_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="378dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/buck_icon" />
+
+    <ImageView
+        android:id="@+id/blackbeard_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blackbeard_icon" />
+
+    <ImageView
+        android:id="@+id/sledge_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="378dp"
+        app:layout_constraintStart_toEndOf="@+id/buck_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sledge_icon" />
+
+    <ImageView
+        android:id="@+id/montagne_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="450dp"
+        app:layout_constraintStart_toEndOf="@+id/thermite_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/montagne_icon" />
+
+    <ImageView
+        android:id="@+id/thermite_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="450dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thermite_icon" />
+
+    <ImageView
+        android:id="@+id/capitao_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/blackbeard_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/capitao_icon" />
+
+    <ImageView
+        android:id="@+id/nomad_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/maverick_icon"
+        app:layout_constraintStart_toEndOf="@+id/gridlock_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nomad_icon" />
+
+    <ImageView
+        android:id="@+id/hibana_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/capitao_icon"
+        app:layout_constraintStart_toEndOf="@+id/jackal_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hibana_icon" />
+
+    <ImageView
+        android:id="@+id/amaru_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintStart_toEndOf="@+id/kali_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/amaru_icon" />
+
+    <ImageView
+        android:id="@+id/dokkaebi_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="234dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/zofia_icon"
+        app:layout_constraintStart_toEndOf="@+id/finka_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dokkaebi_icon" />
+
+    <ImageView
+        android:id="@+id/twitch_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/blitz_icon"
+        app:layout_constraintStart_toEndOf="@+id/montagne_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/twitch_icon" />
+
+    <ImageView
+        android:id="@+id/kali_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintStart_toEndOf="@+id/iana_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kali_icon" />
+
+    <ImageView
+        android:id="@+id/ying_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="234dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ying_icon" />
+
+    <ImageView
+        android:id="@+id/blitz_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blitz_icon" />
+
+    <ImageView
+        android:id="@+id/lion_lion"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lion_icon" />
+
+    <ImageView
+        android:id="@+id/nokk_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/amaru_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nokk_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
