@@ -46,6 +46,13 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/alibi_icon" />
+
+            <ImageView
+                android:id="@+id/iv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/alibi_icon" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
