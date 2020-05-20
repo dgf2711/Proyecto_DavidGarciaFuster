@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MapasVisualizar"></activity>
+        <activity android:name=".PersonajeVisualizar"></activity>
+        <activity android:name=".MapasVisualizar" />
         <activity android:name=".Defenders" />
         <activity android:name=".Attackers" />
         <activity android:name=".Mapas" />

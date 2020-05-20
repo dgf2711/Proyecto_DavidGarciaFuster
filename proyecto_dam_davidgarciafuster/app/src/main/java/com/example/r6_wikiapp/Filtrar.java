@@ -36,8 +36,12 @@ public class Filtrar extends AppCompatActivity {
                 databaseAcces.open();
 
                 String n = pruebadb.getText().toString();
-                String nombre = databaseAcces.getNombre(n);
-                pruebadb2.setText(nombre);
+                //String nombre = databaseAcces.getNombre(n);
+                String[] campos= databaseAcces.getStatsarmarPrincipal(n);
+                String nombre=campos[0];
+                String armaPincipal=campos[2];
+
+                pruebadb2.setText(nombre+" "+armaPincipal);
                 databaseAcces.close();
             }
 
