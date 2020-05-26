@@ -16,36 +16,64 @@ import android.widget.TextView;
 import java.io.IOException;
 
 public class Filtrar extends AppCompatActivity {
-   private EditText pruebadb;
-   private Button botonPrueba;
-   private TextView pruebadb2;
+
+   private Button buttonOperadores;
+   private Button buttonArmaPrincipal;
+   private Button buttonArmaSecundaria;
+   private String opcion;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filtrar);
-        pruebadb = (EditText) findViewById(R.id.pruebadb);
-        pruebadb2 = (TextView) findViewById(R.id.pruebadb2);
-        botonPrueba = (Button) findViewById(R.id.botonPrueba);
-        botonPrueba.setOnClickListener(new View.OnClickListener() {
+        buttonOperadores = (Button) findViewById(R.id.buttonOperadores);
+        buttonArmaPrincipal= (Button) findViewById(R.id.buttonArmaPrincipal);
+        buttonArmaSecundaria= (Button) findViewById(R.id.buttonArmaSecundaria);
+
+        buttonOperadores.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                DatabaseAcces databaseAcces=DatabaseAcces.getInstance(getApplicationContext());
-                databaseAcces.open();
+                opcion="personaje";
+                guardar();
 
-                String n = pruebadb.getText().toString();
-                //String nombre = databaseAcces.getNombre(n);
-                String[] campos= databaseAcces.getStatsarmarPrincipal(n);
-                String nombre=campos[0];
-                String armaPincipal=campos[2];
-
-                pruebadb2.setText(nombre+" "+armaPincipal);
-                databaseAcces.close();
             }
 
         });
+        buttonArmaPrincipal.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                opcion="arma1";
+                guardar();
+
+            }
+
+        });
+        buttonArmaSecundaria.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                opcion="arma2";
+                guardar();
+
+
+            }
+
+        });
+
+
+
+
+    }
+    private void guardar(){
+
+
+        Intent intentFiltrar = new Intent(Filtrar.this, FiltrarVisualizar.class);
+        intentFiltrar.putExtra("Key",opcion);
+        startActivity(intentFiltrar);
 
     }
 

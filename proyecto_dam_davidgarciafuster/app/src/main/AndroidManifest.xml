@@ -11,26 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Video"
-                  android:screenOrientation="landscape"/>
-        <activity android:name=".PersonajeVisualizar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MapasVisualizar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Defenders"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Attackers"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Mapas"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Filtrar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Noticias"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Personajes"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Foro"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".FiltrarVisualizar"></activity>
+        <activity
+            android:name=".Video"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PersonajeVisualizar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MapasVisualizar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Defenders"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Attackers"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Mapas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Filtrar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Noticias"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Personajes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Foro"
+            android:screenOrientation="portrait" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

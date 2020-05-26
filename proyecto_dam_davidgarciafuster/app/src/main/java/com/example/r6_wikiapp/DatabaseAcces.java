@@ -32,16 +32,44 @@ public class DatabaseAcces {
         }
     }
 
-    public String getNombre(String nombre) {
-        c = db.rawQuery("select nombre from personajes where nombreClave='"+nombre+"'", new String[]{});
+
+    public String getNombres() {
+        c = db.rawQuery("select nombreClave from personajes", new String[]{});
 
         StringBuffer buffer = new StringBuffer();
-        while (c.moveToNext()) {
-            String nombre1 = c.getString(0);
-            buffer.append("" + nombre1);
+        String nombres="";
 
-
+        while (c.moveToNext()){
+            nombres=nombres+c.getString(0)+"\n";
         }
+        buffer.append(""+nombres);
+
+        return buffer.toString();
+    }
+    public String getArmas1() {
+        c = db.rawQuery("select nombre,dano from ArmaPrincipal order by dano", new String[]{});
+
+        StringBuffer buffer = new StringBuffer();
+        String nombres="";
+
+        while (c.moveToNext()){
+            nombres=nombres+"Nombre: "+c.getString(0)+" Daño: "+c.getString(1)+"\n";
+        }
+        buffer.append(""+nombres);
+
+        return buffer.toString();
+    }
+    public String getArmas2() {
+        c = db.rawQuery("select nombre,dano from ArmaSecundaria order by dano", new String[]{});
+
+        StringBuffer buffer = new StringBuffer();
+        String nombres="";
+
+        while (c.moveToNext()){
+            nombres=nombres+"Nombre: "+c.getString(0)+" Daño: "+c.getString(1)+"\n";
+        }
+        buffer.append(""+nombres);
+
         return buffer.toString();
     }
 
@@ -177,6 +205,7 @@ public class DatabaseAcces {
 
 
     }
+
 
 
 }

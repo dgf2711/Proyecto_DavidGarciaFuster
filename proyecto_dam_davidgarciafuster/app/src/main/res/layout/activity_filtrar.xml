@@ -8,40 +8,32 @@
     tools:context=".Filtrar">
 
     <Button
-        android:id="@+id/botonPrueba"
+        android:id="@+id/buttonOperadores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:text="Button"
+        android:text="Mostrar Operadores"
+        app:layout_constraintBottom_toTopOf="@+id/buttonArmaPrincipal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="270dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/pruebadb2"
-        android:layout_width="176dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:foreground="#0003DAC5"
-        android:text="TextView"
-        android:textColor="#E91E63"
+    <Button
+        android:id="@+id/buttonArmaPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Armas Principales"
+        app:layout_constraintBottom_toTopOf="@+id/buttonArmaSecundaria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOperadores" />
+
+    <Button
+        android:id="@+id/buttonArmaSecundaria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Armas Secundarias"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonPrueba"
-        app:layout_constraintVertical_bias="0.579" />
-
-    <EditText
-        android:id="@+id/pruebadb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/botonPrueba"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.506" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonArmaPrincipal" />
 </androidx.constraintlayout.widget.ConstraintLayout>
