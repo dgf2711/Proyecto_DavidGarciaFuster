@@ -2,10 +2,15 @@ package com.example.r6_wikiapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class PersonajeVisualizar extends AppCompatActivity {
     private ImageView imagePersonaje;
@@ -36,6 +41,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
     private TextView dificultad;
     private TextView velocidad;
     private TextView blindaje;
+    private Button buttonVideo;
     String personaje;
     String[] campos;
     String[] arma1;
@@ -47,6 +53,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personaje_visualizar);
+        buttonVideo= (Button)findViewById(R.id.buttonVideo);
         imagePersonaje = (ImageView) findViewById(R.id.imagePersonaje);
         nombreClave = (TextView) findViewById(R.id.nombreClaveText);
         nombre = (TextView) findViewById(R.id.nombreText);
@@ -77,6 +84,16 @@ public class PersonajeVisualizar extends AppCompatActivity {
         blindaje = (TextView) findViewById(R.id.blindajeText);
 
 
+        buttonVideo.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentVideo = new Intent(PersonajeVisualizar.this, Video.class);
+                intentVideo.putExtra("Key",personaje);
+                startActivity(intentVideo);
+
+
+
+            }
+        });
         DatabaseAcces databaseAcces = DatabaseAcces.getInstance(getApplicationContext());
         databaseAcces.open();
 
@@ -957,11 +974,13 @@ public class PersonajeVisualizar extends AppCompatActivity {
             cadenciaArma3.setText("Cadencia: " + arma3[2]);
             movilidadArma3.setText("Movilidad: " + arma3[3]);
             cargadorArma3.setText("Cargador: " + arma3[4]);
-            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
-            dañoArma4.setText("Daño: "+arma4[1]);
-            cadenciaArma4.setText("Cadencia: "+arma4[2]);
-            movilidadArma4.setText("Movilidad: "+arma4[3]);
-            cargadorArma4.setText("Cargador: "+arma4[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
@@ -1080,6 +1099,999 @@ public class PersonajeVisualizar extends AppCompatActivity {
             blindaje.setText("Habilidad: "+campos[10]);
 
         }
+        if (personaje.equals("oryx")) {
+            imagePersonaje.setImageResource(R.drawable.oryx_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("wamai")) {
+            imagePersonaje.setImageResource(R.drawable.wamai_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("goyo")) {
+            imagePersonaje.setImageResource(R.drawable.goyo_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("warden")) {
+            imagePersonaje.setImageResource(R.drawable.warden_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("mozzie")) {
+            imagePersonaje.setImageResource(R.drawable.mozzie_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("kaid")) {
+            imagePersonaje.setImageResource(R.drawable.kaid_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("clash")) {
+            imagePersonaje.setImageResource(R.drawable.clash_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            if (campos[4] == null) {
+                armaPrincipal2.setVisibility(View.GONE);
+                dañoArma2.setVisibility(View.GONE);
+                cadenciaArma2.setVisibility(View.GONE);
+                movilidadArma2.setVisibility(View.GONE);
+                cargadorArma2.setVisibility(View.GONE);
+            }
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("maestro")) {
+            imagePersonaje.setImageResource(R.drawable.maestro_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("alibi")) {
+            imagePersonaje.setImageResource(R.drawable.alibi_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("vigil")) {
+            imagePersonaje.setImageResource(R.drawable.vigil_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("ela")) {
+            imagePersonaje.setImageResource(R.drawable.ela_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("lesion")) {
+            imagePersonaje.setImageResource(R.drawable.lesion_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("mira")) {
+            imagePersonaje.setImageResource(R.drawable.mira_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("echo")) {
+            imagePersonaje.setImageResource(R.drawable.echo_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("caveira")) {
+            imagePersonaje.setImageResource(R.drawable.caveira_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("valkyrie")) {
+            imagePersonaje.setImageResource(R.drawable.valkyrie_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("frost")) {
+            imagePersonaje.setImageResource(R.drawable.frost_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("mute")) {
+            imagePersonaje.setImageResource(R.drawable.mute_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("smoke")) {
+            imagePersonaje.setImageResource(R.drawable.smoke_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("castle")) {
+            imagePersonaje.setImageResource(R.drawable.castle_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("pulse")) {
+            imagePersonaje.setImageResource(R.drawable.pulse_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("doc")) {
+            imagePersonaje.setImageResource(R.drawable.doc_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("rook")) {
+            imagePersonaje.setImageResource(R.drawable.rook_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("jager")) {
+            imagePersonaje.setImageResource(R.drawable.jager_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("bandit")) {
+            imagePersonaje.setImageResource(R.drawable.bandit_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            if (campos[6] == null) {
+                armaSecundaria2.setVisibility(View.GONE);
+                dañoArma4.setVisibility(View.GONE);
+                cadenciaArma4.setVisibility(View.GONE);
+                movilidadArma4.setVisibility(View.GONE);
+                cargadorArma4.setVisibility(View.GONE);
+            }
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("tachanka")) {
+            imagePersonaje.setImageResource(R.drawable.tachanka_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+        if (personaje.equals("kapkan")) {
+            imagePersonaje.setImageResource(R.drawable.kapkan_character);
+            campos = databaseAcces.getTodoPersonaje(personaje);
+            arma1 = databaseAcces.getStatsarmarPrincipal(personaje);
+            arma2 = databaseAcces.getStatsarmarPrincipal2(personaje);
+            arma3 = databaseAcces.getStatsarmarSecundaria(personaje);
+            arma4 = databaseAcces.getStatsarmarSecundaria2(personaje);
+            nombreClave.setText("Nombre Clave: " + campos[0]);
+            nombre.setText("Nombre: " + campos[1]);
+            nacionalidad.setText("Nacionalidad: " + campos[2]);
+            armaPrincipal.setText("Arma Principal: " + campos[3]);
+            dañoArma1.setText("Daño: " + arma1[1]);
+            cadenciaArma1.setText("Cadencia: " + arma1[2]);
+            movilidadArma1.setText("Movilidad: " + arma1[3]);
+            cargadorArma1.setText("Cargador: " + arma1[4]);
+            armaPrincipal2.setText("Arma Principal 2: " + campos[4]);
+            dañoArma2.setText("Daño: " + arma2[1]);
+            cadenciaArma2.setText("Cadencia: " + arma2[2]);
+            movilidadArma2.setText("Movilidad: " + arma2[3]);
+            cargadorArma2.setText("Cargador: " + arma2[4]);
+            armaSecundaria.setText("Arma Secundaria: " + campos[5]);
+            dañoArma3.setText("Daño: " + arma3[1]);
+            cadenciaArma3.setText("Cadencia: " + arma3[2]);
+            movilidadArma3.setText("Movilidad: " + arma3[3]);
+            cargadorArma3.setText("Cargador: " + arma3[4]);
+            armaSecundaria2.setText("Arma Secundaria 2: "+campos[6]);
+            dañoArma4.setText("Daño: "+arma4[1]);
+            cadenciaArma4.setText("Cadencia: "+arma4[2]);
+            movilidadArma4.setText("Movilidad: "+arma4[3]);
+            cargadorArma4.setText("Cargador: "+arma4[4]);
+            habilidad.setText("Habilidad: "+campos[7]);
+            dificultad.setText("Dificultad: "+campos[8]);
+            velocidad.setText("Velocidad: "+campos[9]);
+            blindaje.setText("Habilidad: "+campos[10]);
+
+        }
+
 
     }
 }
