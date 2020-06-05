@@ -135,7 +135,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
         }
         if (personaje.equals("kali")) {
             imagePersonaje.setImageResource(R.drawable.kali_character);
@@ -172,7 +172,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
         }
         if (personaje.equals("amaru")) {
             imagePersonaje.setImageResource(R.drawable.amaru_character);
@@ -207,7 +207,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("nokk")) {
@@ -243,7 +243,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("gridlock")) {
@@ -279,7 +279,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
         }
         if (personaje.equals("nomad")) {
             imagePersonaje.setImageResource(R.drawable.nomad_character);
@@ -316,7 +316,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("maverick")) {
@@ -354,7 +354,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("lion")) {
@@ -390,7 +390,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("finka")) {
@@ -426,7 +426,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("dokkaebi")) {
@@ -462,7 +462,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("zofia")) {
@@ -500,7 +500,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("ying")) {
@@ -538,7 +538,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("jackal")) {
@@ -574,7 +574,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("hibana")) {
@@ -610,7 +610,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("capitao")) {
@@ -648,7 +648,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("blackbeard")) {
@@ -686,7 +686,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("buck")) {
@@ -724,7 +724,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("sledge")) {
@@ -760,7 +760,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("thatcher")) {
@@ -798,7 +798,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("ash")) {
@@ -834,7 +834,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("thermite")) {
@@ -870,7 +870,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("montagne")) {
@@ -908,7 +908,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("twitch")) {
@@ -944,7 +944,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("blitz")) {
@@ -984,7 +984,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("iq")) {
@@ -1022,7 +1022,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("fuze")) {
@@ -1058,7 +1058,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("glaz")) {
@@ -1096,7 +1096,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("oryx")) {
@@ -1132,7 +1132,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("wamai")) {
@@ -1168,7 +1168,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("goyo")) {
@@ -1206,7 +1206,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("warden")) {
@@ -1242,7 +1242,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("mozzie")) {
@@ -1278,7 +1278,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("kaid")) {
@@ -1316,7 +1316,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("clash")) {
@@ -1354,7 +1354,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("maestro")) {
@@ -1390,7 +1390,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("alibi")) {
@@ -1426,7 +1426,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("vigil")) {
@@ -1462,7 +1462,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("ela")) {
@@ -1500,7 +1500,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("lesion")) {
@@ -1538,7 +1538,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("mira")) {
@@ -1574,7 +1574,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("echo")) {
@@ -1610,7 +1610,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("caveira")) {
@@ -1648,7 +1648,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("valkyrie")) {
@@ -1686,7 +1686,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("frost")) {
@@ -1724,7 +1724,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("mute")) {
@@ -1760,7 +1760,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("smoke")) {
@@ -1796,7 +1796,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("castle")) {
@@ -1832,7 +1832,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("pulse")) {
@@ -1868,7 +1868,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("doc")) {
@@ -1904,7 +1904,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("rook")) {
@@ -1940,7 +1940,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("jager")) {
@@ -1978,7 +1978,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("bandit")) {
@@ -2016,7 +2016,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("tachanka")) {
@@ -2052,7 +2052,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
         if (personaje.equals("kapkan")) {
@@ -2088,7 +2088,7 @@ public class PersonajeVisualizar extends AppCompatActivity {
             habilidad.setText("Habilidad: "+campos[7]);
             dificultad.setText("Dificultad: "+campos[8]);
             velocidad.setText("Velocidad: "+campos[9]);
-            blindaje.setText("Habilidad: "+campos[10]);
+            blindaje.setText("Blindaje: "+campos[10]);
 
         }
 
